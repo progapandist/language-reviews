@@ -5,7 +5,7 @@
 
   <h4>Reviews:</h4>
   <ul>
-    <%= render @language.reviews %>
+    <%= render(@language.reviews) || "No reviews yet... Add your own!" %>
   </ul>
 
   <%= simple_form_for [@language, @review] do |f| %>
