@@ -6,7 +6,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem 'puma'
 gem 'rails', '5.1.3'
+
+# Caching
 gem 'redis'
+gem 'redis-rails'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

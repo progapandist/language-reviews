@@ -1,4 +1,6 @@
 <div class="container">
-  <h1>Languages used at Le Wagon</h1>
-  <%= render @languages %>
+  <% cache @languages do %>
+    <h1>Languages used at Le Wagon</h1>
+    <%= render @languages %>
+  <% end %>
 </div>
