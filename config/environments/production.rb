@@ -54,10 +54,12 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
-  ## CACHING IN PRODUCTION 
+  ## CACHING IN PRODUCTION
   # Use a different cache store in production.
-  config.cache_store = :redis_store, ENV['REDISCLOUD_URL'] if ENV['REDISCLOUD_URL']
-  config.action_controller.enable_fragment_cache_logging = true
+  if ENV['REDISCLOUD_URL']
+    config.cache_store = :redis_store, ENV['REDISCLOUD_URL'], { expires_in: 1.day }
+    config.action_controller.enable_fragment_cache_logging = true
+  end
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
