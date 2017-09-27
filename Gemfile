@@ -8,7 +8,6 @@ gem 'puma'
 gem 'rails', '5.1.3'
 
 # Caching
-gem 'redis'
 gem 'redis-rails'
 
 gem 'autoprefixer-rails'
